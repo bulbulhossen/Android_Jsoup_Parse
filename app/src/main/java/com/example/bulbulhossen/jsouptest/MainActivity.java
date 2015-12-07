@@ -1,25 +1,22 @@
 package com.example.bulbulhossen.jsouptest;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.w3c.dom.Element;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends ActionBarActivity {
 
     private EditText respText;
 
@@ -67,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             StringBuffer buffer = new StringBuffer();
             try {
-                Log.d("JSwa", "Connecting to [" + strings[0] + "]");
+                Log.d("JSwa", "Connecting to ["+strings[0]+"]");
                 Document doc  = Jsoup.connect(strings[0]).get();
                 Log.d("JSwa", "Connected to ["+strings[0]+"]");
                 // Get document (HTML page) title
